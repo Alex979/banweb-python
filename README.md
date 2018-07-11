@@ -101,3 +101,15 @@ Example usage:
 ```python
 banweb.login("https://rooturl.edu", "ABC123456", "12345", "Answer")
 ```
+
+### navigate_to(url, headers=None, data=None, cookies=None, method="GET")
+Loads the given url using the banner session and returns a response object
+  * **url:** The url to load
+  * **headers:** Optional HTTP headers
+  * **cookies:** Optional Session cookies
+  * **method:** Optional HTTP method (defaults to GET)
+
+Example usage:
+```python
+banweb.login("https://rooturl.edu", "ABC123456", "12345", "Answer")
+```
