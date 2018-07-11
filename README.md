@@ -10,11 +10,13 @@ pip instal beautifulsoup4
   * [Examples](#examples)
     * [Getting a list of registered courses](#getting-a-list-of-registered-courses)
     * [Getting a list of financial awards](#getting-a-list-of-financial-awards)
+    * [Getting a list of grades](#getting-a-list-of-grades)
   * [Documentation](#documentation)
     * [login](#loginroot-sid-pin-security_answer)
     * [navigate_to](#navigate_tourl-headersnone-datanone-cookiesnone-methodget)
     * [get_courses](#get_coursesyear-term)
     * [get_awards](#get_awardsyear)
+    * [get_grades](#get_gradesyear-term)
 ## Examples
 ### Getting a list of registered courses
 ```python
@@ -32,7 +34,10 @@ This code would output:
     "total_credits": 16,
     "courses": [
         {
-            "title": "Example Course - EX 3000 - 10",
+            "title": "Example Course",
+            "subject": "EX",
+            "number": 3000,
+            "section": 10,
             "associated_term": "Fall 2018",
             "crn": 24567,
             "status": "**Web Registered** on 04/19/18",
@@ -43,7 +48,10 @@ This code would output:
             "campus": "Main Campus"
         },
         {
-            "title": "Example Discussion - EX 3000 - 30",
+            "title": "Example Discussion",
+            "subject": "EX",
+            "number": 3000,
+            "section": 30,
             "associated_term": "Fall 2018",
             "crn": 24568,
             "status": "**Web Registered** on 04/19/18",
@@ -99,6 +107,45 @@ This code would output:
     ]
 }
 ```
+### Getting a list of grades
+```python
+from banweb import login, get_grades
+import json
+
+login("https://banweb.example.edu", "ABC123456", "12345", "Answer")
+grades = get_grades("2018", "spring")
+
+print(json.dumps(grades, indent=4))
+```
+This code would output:
+```
+{
+    "grades": [
+        {
+            "title": "Intro To Python",
+            "subject": "CSCI",
+            "number": 1000,
+            "section": 10,
+            "crn": 20345,
+            "final_grade": "A",
+            "credits": 3,
+            "quality_points": 12.0
+        },
+        {
+            "title": "Programming Ethics",
+            "subject": "CSCI",
+            "number": 1030,
+            "section": 10,
+            "crn": 29634,
+            "final_grade": "F",
+            "credits": 3,
+            "quality_points": 0.0
+        },
+        ...
+    ]
+}
+```
+
 ## Documentation
 ### login(root, sid, pin, security_answer)
 Starts a banner session with the given credentials. Required in order to use any methods that access the banner site.
@@ -182,6 +229,36 @@ Example usage:
 >>> award_info
 {
     "awards": [
+        {...},
+        {...}
+    ]
+}
+```
+
+### get_grades(year, term)
+Returns a list of the user's registered courses for the given term
+  * **year:** Year in which the courses were registered for
+  * **term:** Term in which the courses were registered for (Spring, Summer, or Fall)
+  * **returns:** An object containing a list of all course grades for the given term
+
+Example usage:
+```python
+>>> from banweb import login, get_grades
+
+>>> login("https://banweb.example.edu", "ABC123456", "12345", "Answer")
+>>> grade_info = get_grades("2018", "Spring")
+>>> grade_info.grades.length
+5
+>>> grade_info.grades[0].final_grade
+'A'
+>>> grade_info.grades[0].credits
+3
+>>> grade_info
+{
+    "grades": [
+        {...},
+        {...},
+        {...},
         {...},
         {...}
     ]

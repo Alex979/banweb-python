@@ -76,7 +76,10 @@ def get_courses(year, term):
     course_divs = soup.find_all("table", summary="This layout table is used to present the schedule course detail")
     for course_div in course_divs:
         course = {}
-        course['title'] = course_div.find("caption").string
+        course['title'] = course_div.find("caption").string.split(" - ")[0]
+        course['subject'] = course_div.find("caption").string.split(" - ")[1].split(" ")[0]
+        course['number'] = int(float(course_div.find("caption").string.split(" - ")[1].split(" ")[1]))
+        course['section'] = int(float(course_div.find("caption").string.split(" - ")[2]))
 
         for row in course_div.find_all("th"):
             attribute_name = ""
@@ -127,6 +130,39 @@ def get_awards(year):
         return_data['awards'].append(award)
     return_data['awards'].pop()
     
+    return return_data
+
+def get_grades(year, term):
+    term_code = year
+    if term.strip().lower() == "spring":
+        term_code += "01"
+    elif term.strip().lower() == "summer":
+        term_code += "02"
+    else:
+        term_code += "03"
+
+    r = navigate_to(root_url + "/PRODCartridge/bwskogrd.P_ViewGrde", method="POST", data={"term_in": term_code})
+    soup = BeautifulSoup(r.text, "html.parser")
+    return_data = {}
+
+    return_data['grades'] = []
+    grades_div = soup.find_all("table", "datadisplaytable")[1]
+
+    table_rows = grades_div.find_all("tr")
+    table_rows.pop(0)
+    for table_row in table_rows:
+        grade = {}
+        row = table_row.find_all("td")
+        grade['title'] = combine_strings(row[4].stripped_strings)
+        grade['subject'] = combine_strings(row[1].stripped_strings)
+        grade['number'] = int(float(combine_strings(row[2].stripped_strings)))
+        grade['section'] = int(float(combine_strings(row[3].stripped_strings)))
+        grade['crn'] = int(float(combine_strings(row[0].stripped_strings)))
+        grade['final_grade'] = combine_strings(row[6].stripped_strings)
+        grade['credits'] = int(float(combine_strings(row[9].stripped_strings)))
+        grade['quality_points'] = float(combine_strings(row[10].stripped_strings))
+        return_data['grades'].append(grade)
+
     return return_data
 
 def combine_strings(strings):
