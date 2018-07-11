@@ -3,6 +3,7 @@ Interface with the banner website to access academic information in your program
 ### Table of contents
   * [Examples](#examples)
   * [Documentation](#documentation)
+    * [login](#loginroot-sid-pin-security_answer)
 ## Examples
 ### Getting a list of registered courses
 ```python
