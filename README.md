@@ -5,6 +5,8 @@ Interface with the banner website to access academic information in your program
   * [Documentation](#documentation)
     * [login](#loginroot-sid-pin-security_answer)
     * [navigate_to](#navigate_tourl-headersnone-datanone-cookiesnone-methodget)
+    * [get_courses](#get_coursesyear-term)
+    * [get_awards](#get_awardsyear)
 ## Examples
 ### Getting a list of registered courses
 ```python
