@@ -90,10 +90,10 @@ This code would output:
 ### login(root, sid, pin, security_answer)
 Starts a banner session with the given credentials. Required in order to use any methods that access the banner site.
 
-**root:** The root url for user's banner site
+⋅⋅⋅**root:** The root url for user's banner site
 
-**sid:** The user's sid used to log into banner
+⋅⋅⋅**sid:** The user's sid used to log into banner
 
-**pin:** The user's pin used to log into banner
+⋅⋅⋅**pin:** The user's pin used to log into banner
 
-**security_ansewr:** The answer to the user's security question
+⋅⋅⋅**security_ansewr:** The answer to the user's security question
