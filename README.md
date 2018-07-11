@@ -113,8 +113,9 @@ Loads the given url using the banner session and returns a response object
 Example usage:
 ```python
 >>> from banweb import login, navigate_to, root_url
->>> # Use root_url to use the root specified on login
+
 >>> login("https://rooturl.edu", "ABC123456", "12345", "Answer")
+>>> # Use root_url to use the root specified on login
 >>> response = navigate_to(root_url + "/PRODCartridge/bwskfshd.P_CrseSchd?start_date_in=08/27/2018", method="GET", data={"start_date_in": "08/27/2018"})
 >>> response.status_code
 200
