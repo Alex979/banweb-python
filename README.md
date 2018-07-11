@@ -90,7 +90,6 @@ This code would output:
 ```
 ## Documentation
 ### login(root, sid, pin, security_answer)
-
 Starts a banner session with the given credentials. Required in order to use any methods that access the banner site.
   * **root:** The root url for user's banner site
   * **sid:** The user's sid used to log into banner
@@ -99,7 +98,7 @@ Starts a banner session with the given credentials. Required in order to use any
 
 Example usage:
 ```python
-banweb.login("https://rooturl.edu", "ABC123456", "12345", "Answer")
+>>> banweb.login("https://rooturl.edu", "ABC123456", "12345", "Answer")
 ```
 
 ### navigate_to(url, headers=None, data=None, cookies=None, method="GET")
@@ -111,5 +110,8 @@ Loads the given url using the banner session and returns a response object
 
 Example usage:
 ```python
-banweb.login("https://rooturl.edu", "ABC123456", "12345", "Answer")
+# Use root_url to use the root specified on login
+>>> response = banweb.navigate_to(root_url + "/PRODCartridge/bwskfshd.P_CrseSchd?start_date_in=08/27/2018", method="GET", data={"start_date_in": "08/27/2018"})
+>>> response.status_code
+200
 ```
