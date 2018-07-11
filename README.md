@@ -3,7 +3,6 @@ Interface with the banner website to access academic information in your program
 
 Requires the requests library and BeautifulSoup4
 ```
-# To install dependencies:
 pip install requests
 pip instal beautifulsoup4
 ```
