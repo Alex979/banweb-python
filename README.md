@@ -100,6 +100,7 @@ Starts a banner session with the given credentials. Required in order to use any
 Example usage:
 ```python
 >>> from banweb import login
+
 >>> login("https://rooturl.edu", "ABC123456", "12345", "Answer")
 ```
 
