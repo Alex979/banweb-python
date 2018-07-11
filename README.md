@@ -161,7 +161,7 @@ Example usage:
 ### get_awards(year)
 Returns a list of the user's financial awards
   * **year:** Year in which the awards are offered
-  * **returns:** An object containing a list of awards offered to the user for the given year
+  * **returns:** An object containing a list of awards offered to the user for the given academic year
 
 Example usage:
 ```python
