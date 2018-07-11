@@ -2,7 +2,7 @@
 Interface with the banner website to access academic information in your programs.
 
 ## Examples
-Getting a list of registered courses
+### Getting a list of registered courses
 ```python
 import banweb
 import json
@@ -12,7 +12,7 @@ courses = banweb.get_courses("2018", "fall")
 
 print(json.dumps(courses, indent=4))
 ```
-This code would output an object similar to this:
+This code would output:
 ```
 {
     "total_credits": 16,
