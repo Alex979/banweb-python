@@ -1,9 +1,8 @@
 # banweb-python
 Interface with the banner website to access academic information in your programs.
 ### Table of contents
-[Examples](#examples)
-
-[Documentation](#documentation)
+  * [Examples](#examples)
+  * [Documentation](#documentation)
 ## Examples
 ### Getting a list of registered courses
 ```python
