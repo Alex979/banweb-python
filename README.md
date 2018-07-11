@@ -4,6 +4,7 @@ Interface with the banner website to access academic information in your program
   * [Examples](#examples)
   * [Documentation](#documentation)
     * [login](#loginroot-sid-pin-security_answer)
+    * [navigate_to](#navigate_tourl-headersnone-datanone-cookiesnone-methodget)
 ## Examples
 ### Getting a list of registered courses
 ```python
@@ -98,7 +99,8 @@ Starts a banner session with the given credentials. Required in order to use any
 
 Example usage:
 ```python
->>> banweb.login("https://rooturl.edu", "ABC123456", "12345", "Answer")
+>>> from banweb import login
+>>> login("https://rooturl.edu", "ABC123456", "12345", "Answer")
 ```
 
 ### navigate_to(url, headers=None, data=None, cookies=None, method="GET")
