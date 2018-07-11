@@ -11,8 +11,8 @@ Interface with the banner website to access academic information in your program
 from banweb import login, get_courses
 import json
 
-banweb.login("https://rooturl.edu", "ABC123456", "12345", "Answer")
-courses = banweb.get_courses("2018", "fall")
+login("https://rooturl.edu", "ABC123456", "12345", "Answer")
+courses = get_courses("2018", "fall")
 
 print(json.dumps(courses, indent=4))
 ```
@@ -52,8 +52,8 @@ This code would output:
 from banweb import login, get_awards
 import json
 
-banweb.login("https://rooturl.edu", "ABC123456", "12345", "Answer")
-awards = banweb.get_awards("1718")
+login("https://rooturl.edu", "ABC123456", "12345", "Answer")
+awards = get_awards("1718")
 
 print(json.dumps(awards, indent=4))
 ```
