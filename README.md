@@ -2,6 +2,8 @@
 Interface with the banner website to access academic information in your programs.
 ### Table of contents
   * [Examples](#examples)
+    * [Getting a list of registered courses](#getting-a-list-of-registered-courses)
+    * [Getting a list of financial awards](#getting-a-list-of-financial-awards)
   * [Documentation](#documentation)
     * [login](#loginroot-sid-pin-security_answer)
     * [navigate_to](#navigate_tourl-headersnone-datanone-cookiesnone-methodget)
