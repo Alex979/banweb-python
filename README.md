@@ -43,3 +43,45 @@ This code would output:
     ]
 }
 ```
+### Getting a list of financial awards
+```python
+import banweb
+import json
+
+banweb.login("https://rooturl.edu", "ABC123456", "12345", "Answer")
+awards = banweb.get_awards("1718")
+
+print(json.dumps(awards, indent=4))
+```
+This code would output:
+```
+{
+    "awards": [
+        {
+            "fund": "Honors Scholarship",
+            "fall": {
+                "status": "Accepted",
+                "amount": "$7,500.00"
+            },
+            "spring": {
+                "status": "Accepted",
+                "amount": "$7,500.00"
+            },
+            "total": "$15,000.00"
+        },
+        {
+            "fund": "Federal Work-Study",
+            "fall": {
+                "status": "Web Accept",
+                "amount": "$1,250.00"
+            },
+            "spring": {
+                "status": "Web Accept",
+                "amount": "$1,250.00"
+            },
+            "total": "$2,500.00"
+        },
+        ...
+    ]
+}
+```
