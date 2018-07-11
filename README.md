@@ -110,7 +110,6 @@ Loads the given url using the banner session and returns a response object
   * **headers:** Optional HTTP headers
   * **cookies:** Optional Session cookies
   * **method:** Optional HTTP method (defaults to GET)
-
   * **returns:** A response object containing HTTP response data
 
 Example usage:
