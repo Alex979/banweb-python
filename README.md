@@ -8,7 +8,7 @@ Interface with the banner website to access academic information in your program
 ## Examples
 ### Getting a list of registered courses
 ```python
-import banweb
+from banweb import login, get_courses
 import json
 
 banweb.login("https://rooturl.edu", "ABC123456", "12345", "Answer")
@@ -49,7 +49,7 @@ This code would output:
 ```
 ### Getting a list of financial awards
 ```python
-import banweb
+from banweb import login, get_awards
 import json
 
 banweb.login("https://rooturl.edu", "ABC123456", "12345", "Answer")
