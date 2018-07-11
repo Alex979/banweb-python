@@ -21,7 +21,7 @@ pip instal beautifulsoup4
 from banweb import login, get_courses
 import json
 
-login("https://rooturl.edu", "ABC123456", "12345", "Answer")
+login("https://banweb.example.edu", "ABC123456", "12345", "Answer")
 courses = get_courses("2018", "fall")
 
 print(json.dumps(courses, indent=4))
@@ -62,7 +62,7 @@ This code would output:
 from banweb import login, get_awards
 import json
 
-login("https://rooturl.edu", "ABC123456", "12345", "Answer")
+login("https://banweb.example.edu", "ABC123456", "12345", "Answer")
 awards = get_awards("1718")
 
 print(json.dumps(awards, indent=4))
@@ -111,7 +111,7 @@ Example usage:
 ```python
 >>> from banweb import login
 
->>> login("https://rooturl.edu", "ABC123456", "12345", "Answer")
+>>> login("https://banweb.example.edu", "ABC123456", "12345", "Answer")
 ```
 
 ### navigate_to(url, headers=None, data=None, cookies=None, method="GET")
@@ -126,7 +126,7 @@ Example usage:
 ```python
 >>> from banweb import login, navigate_to, root_url
 
->>> login("https://rooturl.edu", "ABC123456", "12345", "Answer")
+>>> login("https://banweb.example.edu", "ABC123456", "12345", "Answer")
 >>> # Use root_url to use the root specified on login
 >>> response = navigate_to(root_url + "/PRODCartridge/bwskfshd.P_CrseSchd?start_date_in=08/27/2018", method="GET", data={"start_date_in": "08/27/2018"})
 >>> response.status_code
@@ -145,7 +145,7 @@ Example usage:
 ```python
 >>> from banweb import login, get_courses
 
->>> login("https://rooturl.edu", "ABC123456", "12345", "Answer")
+>>> login("https://banweb.example.edu", "ABC123456", "12345", "Answer")
 >>> course_info = get_courses("2018", "Spring")
 >>> course_info.total_credits
 15
@@ -173,7 +173,7 @@ Example usage:
 ```python
 >>> from banweb import login, get_awards
 
->>> login("https://rooturl.edu", "ABC123456", "12345", "Answer")
+>>> login("https://banweb.example.edu", "ABC123456", "12345", "Answer")
 >>> award_info = get_awards("1718")
 >>> award_info.awards.length
 2
