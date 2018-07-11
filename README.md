@@ -153,3 +153,27 @@ Example usage:
     ]
 }
 ```
+
+### get_awards(year)
+Returns a list of the user's financial awards
+  * **year:** Year in which the awards are offered
+  * **returns:** An object containing a list of awards offered to the user for the given year
+
+Example usage:
+```python
+>>> from banweb import login, get_awards
+
+>>> login("https://rooturl.edu", "ABC123456", "12345", "Answer")
+>>> award_info = get_awards("1718")
+>>> award_info.awards.length
+2
+>>> award_info.awards[0].total
+'$15,000.00'
+>>> award_info
+{
+    "awards": [
+        {...},
+        {...}
+    ]
+}
+```
