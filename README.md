@@ -110,7 +110,6 @@ Loads the given url using the banner session and returns a response object
   * **headers:** Optional HTTP headers
   * **cookies:** Optional Session cookies
   * **method:** Optional HTTP method (defaults to GET)
-
   * **returns:** A response object containing HTTP response data
 
 Example usage:
@@ -124,4 +123,33 @@ Example usage:
 200
 >>> response.text
 '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML...'
+```
+
+### get_courses(year, term)
+Returns a list of the user's registered courses for the given term
+  * **year:** Year in which the courses are registered for
+  * **term:** Term in which the courses are registered for (Spring, Summer, or Fall)
+  * **returns:** An object containing overall course information and a list of courses
+
+Example usage:
+```python
+>>> from banweb import login, get_courses
+
+>>> login("https://rooturl.edu", "ABC123456", "12345", "Answer")
+>>> course_info = get_courses("2018", "Spring")
+>>> course_info.total_credits
+15
+>>> course_info.courses.length
+5
+>>> course_info
+{
+    "total_credits": 15,
+    "courses": [
+        {...},
+        {...},
+        {...},
+        {...},
+        {...}
+    ]
+}
 ```
