@@ -1,5 +1,12 @@
 # banweb-python
 Interface with the banner website to access academic information in your programs.
+
+Requires the requests library and BeautifulSoup4
+```
+# To install dependencies:
+pip install requests
+pip instal beautifulsoup4
+```
 ### Table of contents
   * [Examples](#examples)
     * [Getting a list of registered courses](#getting-a-list-of-registered-courses)
