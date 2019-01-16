@@ -36,8 +36,8 @@ This code would output:
         {
             "title": "Example Course",
             "subject": "EX",
-            "number": 3000,
-            "section": 10,
+            "number": "3000",
+            "section": "10",
             "associated_term": "Fall 2018",
             "crn": 24567,
             "status": "**Web Registered** on 04/19/18",
@@ -50,8 +50,8 @@ This code would output:
         {
             "title": "Example Discussion",
             "subject": "EX",
-            "number": 3000,
-            "section": 30,
+            "number": "3000",
+            "section": "30",
             "associated_term": "Fall 2018",
             "crn": 24568,
             "status": "**Web Registered** on 04/19/18",
@@ -124,8 +124,8 @@ This code would output:
         {
             "title": "Intro To Python",
             "subject": "CSCI",
-            "number": 1000,
-            "section": 10,
+            "number": "1000",
+            "section": "10",
             "crn": 20345,
             "final_grade": "A",
             "credits": 3,
@@ -134,8 +134,8 @@ This code would output:
         {
             "title": "Programming Ethics",
             "subject": "CSCI",
-            "number": 1030,
-            "section": 10,
+            "number": "1030",
+            "section": "10",
             "crn": 29634,
             "final_grade": "F",
             "credits": 3,
