@@ -2,7 +2,7 @@
 Interface with the banner website to access academic information in your programs.
 
 ### Table of contents
-  * [Installation] (#installation)
+  * [Installation](#installation)
   * [Examples](#examples)
     * [Getting a list of registered courses](#getting-a-list-of-registered-courses)
     * [Getting a list of financial awards](#getting-a-list-of-financial-awards)
