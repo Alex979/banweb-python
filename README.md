@@ -1,5 +1,5 @@
 # banweb-python
-Interface with the banner website to access academic information in your programs.
+Interface with the banner website to access academic information in your python programs.
 
 ### Table of contents
   * [Installation](#installation)
